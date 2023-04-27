@@ -31,12 +31,13 @@ function browseWebsite(url, timeout = 5000) {
     });
 }
 
+// サーバー監視対象のURLリスト
 const siteList = [
-    'https://www.pachinkovista.com/pfactory/model_top.php',
-    'https://www.operal.jp/login/index/',
-    'https://www.fscorp.jp/',
-    'https://www.j-net-gs.com/gsession/common/cmn001.do',
-    'https://www.kenbaiki-pro.jp/',
+    'https://www.pachinkovista.com/pfactory/model_top.php', // パチンコビスタ
+    'https://www.operal.jp/login/index/',                   // 券売機
+    'https://www.fscorp.jp/',                               // エフエス
+    'https://www.j-net-gs.com/gsession/common/cmn001.do',   // グループセッション
+    'https://www.kenbaiki-pro.jp/',                         // 券売機プロ
 ];
 
 /**
@@ -60,6 +61,7 @@ function executeSiteListSequentially(siteList) {
     return Promise.all(promiseArray);
 }
 
+// 実行
 executeSiteListSequentially(siteList).then((result) => {
     console.log('All sites checked.');
     console.log(result);
