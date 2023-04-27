@@ -1,3 +1,5 @@
+// HTTPヘルスチェック
+
 const https = require('https');
 
 /**
